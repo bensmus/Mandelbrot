@@ -17,7 +17,25 @@ def mandle(c, itercount = 10):
         return True
 
 
-#tests
-print(mandle([1, 1]))
-print(mandle([-1, 0]))
-print(mandle([0.2, 0.25]))
+def graphpoints(points):
+    x = np.array([])
+    y = np.array([])
+
+    for point in points:
+        x = np.append(x, point[0])
+        y = np.append(y, point[1])
+
+    plt.scatter(x, y)
+    plt.show()
+
+
+points = []
+for x in np.arange(-2, 2, 0.05):
+    for y in np.arange(-2, 2, 0.05):
+        points.append(np.array([x, y]))
+
+
+pointsmandle = [point for point in points if mandle(point) == True]
+
+# graph these points!
+graphpoints(pointsmandle)
