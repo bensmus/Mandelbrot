@@ -25,13 +25,13 @@ def graphpoints(points):
         x = np.append(x, point[0])
         y = np.append(y, point[1])
 
-    plt.scatter(x, y)
+    plt.scatter(x, y, s = 1)
     plt.show()
 
 
 points = []
-for x in np.arange(-2, 2, 0.05):
-    for y in np.arange(-2, 2, 0.05):
+for x in np.arange(-2, 2, 0.01):
+    for y in np.arange(-2, 2, 0.01):
         points.append(np.array([x, y]))
 
 
