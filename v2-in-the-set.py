@@ -11,11 +11,13 @@ def mandle(c, itercount = 10):
     z = c
     for i in range(itercount):
         z = square(z) + c
-        print(z)
+    if np.linalg.norm(z) > 2:
+        return False
+    else:
+        return True
 
-'''tests
-mandle([-1, 0])
-mandle([-0.5, 0])
-mandle([0, 0.5])
-mandle([0.2, 0.25])
-'''
+
+#tests
+print(mandle([1, 1]))
+print(mandle([-1, 0]))
+print(mandle([0.2, 0.25]))
